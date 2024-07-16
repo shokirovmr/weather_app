@@ -16,7 +16,7 @@ services:
       - envs/.env
     depends_on:
       - db
-      - rabbitmq
+#      - rabbitmq
 
   db:
     image: postgres:15-alpine
@@ -25,10 +25,10 @@ services:
       - postgres_data:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_DB=djangodefault
+      - POSTGRES_DB=weather
       - POSTGRES_PASSWORD=1253
     ports:
-      - "5432:5432"
+      - "5433:5432"
 
 
 #  redis:

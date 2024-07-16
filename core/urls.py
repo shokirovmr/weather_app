@@ -11,7 +11,7 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
     path("ckeditor5/", include("django_ckeditor_5.urls")),
     path("rosetta/", include("rosetta.urls")),
-    path('', include('weather.urls')),
+    path("", include("apps.weather.urls")),
 ]
 
 urlpatterns += swagger_patterns
