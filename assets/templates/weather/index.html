@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+</head>
+<body>
+<h1>Weather App</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="city" placeholder="Enter city name" required>
+    <button type="submit">Get Weather</button>
+</form>
+{% if weather %}
+    <h2>Weather in {{ weather['name'] }}</h2>
+        <p>Temperature: {{ weather['main']['temp'] }} °C</p>
+        <p>Condition: {{ weather['weather'][0]['description'] }}</p>
+{% endif %}
+{% if last_city %}
+<p>Last checked city: {{ last_city }}</p>
+{% endif %}
+</body>
+</html>
